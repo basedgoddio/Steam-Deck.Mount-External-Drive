@@ -12,7 +12,7 @@ set -e
 repo_url="https://raw.githubusercontent.com/basedgoddio/Steam-Deck.Mount-External-Drive/main"
 repo_lib_dir="$repo_url/lib"
 
-tmp_dir="~/Documents/Steam-Deck.Mount-External-Drive"
+tmp_dir="home/jarvis/Documents/Steam-Deck.Mount-External-Drive"
 
 rules_install_dir="/etc/udev/rules.d"
 service_install_dir="/etc/systemd/system"
