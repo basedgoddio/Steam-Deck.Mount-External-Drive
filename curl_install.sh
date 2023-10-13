@@ -67,8 +67,8 @@ function install_automount () {
     sudo rm "$rules_install_dir/99-external-drive-mount.rules"
   fi
 
-  echo "Copying $tmp_dir/external-drive-mount@.service to $service_install_dir/external-drive-mount@.service"
-  sudo cp "$tmp_dir/external-drive-mount@.service" "$service_install_dir/external-drive-mount@.service"
+  echo "Copying $tmp_dir/lib/external-drive-mount@.service to $service_install_dir/external-drive-mount@.service"
+  sudo cp "$tmp_dir/lib/external-drive-mount@.service" "$service_install_dir/external-drive-mount@.service"
 
   echo "Reloading Services"
   sudo udevadm control --reload
