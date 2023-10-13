@@ -1,29 +1,29 @@
 #!/bin/bash
-#Steam Deck Mount External Drive by scawp
-#License: DBAD: https://github.com/scawp/Steam-Deck.Mount-External-Drive/blob/main/LICENSE.md
-#Source: https://github.com/scawp/Steam-Deck.Mount-External-Drive
+#Steam jarvis Mount External Drive by scawp
+#License: DBAD: https://github.com/scawp/Steam-jarvis.Mount-External-Drive/blob/main/LICENSE.md
+#Source: https://github.com/scawp/Steam-jarvis.Mount-External-Drive
 # Use at own Risk!
 
-#curl -sSL https://raw.githubusercontent.com/scawp/Steam-Deck.Mount-External-Drive/main/curl_install.sh | bash
+#curl -sSL https://raw.githubusercontent.com/scawp/Steam-jarvis.Mount-External-Drive/main/curl_install.sh | bash
 
 #stop running script if anything returns an error (non-zero exit )
 set -e
 
-repo_url="https://raw.githubusercontent.com/scawp/Steam-Deck.Mount-External-Drive/main"
+repo_url="https://raw.githubusercontent.com/scawp/Steam-jarvis.Mount-External-Drive/main"
 repo_lib_dir="$repo_url/lib"
 
 tmp_dir="/tmp/scawp.SDMED.install"
 
 rules_install_dir="/etc/udev/rules.d"
 service_install_dir="/etc/systemd/system"
-script_install_dir="/home/deck/.local/share/scawp/SDMED"
+script_install_dir="/home/jarvis/.local/share/scawp/SDMED"
 
 device_name="$(uname --nodename)"
-user="$(id -u deck)"
+user="$(id -u jarvis)"
 
-if [ "$device_name" != "steamdeck" ] || [ "$user" != "1000" ]; then
+if [ "$device_name" != "steamjarvis" ] || [ "$user" != "1000" ]; then
   zenity --question --width=400 \
-  --text="This code has been written specifically for the Steam Deck with user Deck \
+  --text="This code has been written specifically for the Steam jarvis with user jarvis \
   \nIt appears you are running on a different system/non-standard configuration. \
   \nAre you sure you want to continue?"
   if [ "$?" != 0 ]; then
