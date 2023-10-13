@@ -60,8 +60,8 @@ function install_automount () {
   echo "Adding Execute and Removing Write Permissions"
   sudo chmod 555 $script_install_dir/automount.sh
 
-  echo "Copying $tmp_dir/98-external-drive-mount.rules to $rules_install_dir/98-external-drive-mount.rules"
-  sudo cp "$tmp_dir/98-external-drive-mount.rules" "$rules_install_dir/98-external-drive-mount.rules"
+  echo "Copying $tmp_dir/lib/98-external-drive-mount.rules to $rules_install_dir/98-external-drive-mount.rules"
+  sudo cp "$tmp_dir/lib/98-external-drive-mount.rules" "$rules_install_dir/98-external-drive-mount.rules"
   #remove old rule if installed
   if [ -f "$rules_install_dir/99-external-drive-mount.rules" ]; then
     sudo rm "$rules_install_dir/99-external-drive-mount.rules"
