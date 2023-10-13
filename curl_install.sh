@@ -12,7 +12,7 @@ set -e
 repo_url="https://raw.githubusercontent.com/basedgoddio/Steam-Deck.Mount-External-Drive/main"
 repo_lib_dir="$repo_url/lib"
 
-tmp_dir="/tmp/scawp.SDMED.install"
+tmp_dir="~/Documents/Steam-Deck.Mount-External-Drive"
 
 rules_install_dir="/etc/udev/rules.d"
 service_install_dir="/etc/systemd/system"
@@ -46,10 +46,10 @@ function install_automount () {
   echo "Making tmp folder $tmp_dir"
   mkdir -p "$tmp_dir"
 
-  echo "Downloading Required Files"
-  curl -o "$tmp_dir/automount.sh" "$repo_url/automount.sh"
-  curl -o "$tmp_dir/external-drive-mount@.service" "$repo_lib_dir/external-drive-mount@.service"
-  curl -o "$tmp_dir/98-external-drive-mount.rules" "$repo_lib_dir/98-external-drive-mount.rules"
+  #echo "Downloading Required Files"
+  #curl -o "$tmp_dir/automount.sh" "$repo_url/automount.sh"
+  #curl -o "$tmp_dir/external-drive-mount@.service" "$repo_lib_dir/external-drive-mount@.service"
+  #curl -o "$tmp_dir/98-external-drive-mount.rules" "$repo_lib_dir/98-external-drive-mount.rules"
 
   echo "Making script folder $script_install_dir"
   mkdir -p "$script_install_dir"
