@@ -125,7 +125,7 @@ do_mount()
                 /org/freedesktop/UDisks2/block_devices/"${DEVBASE}"                                \
                 org.freedesktop.UDisks2.Filesystem                                                 \
                 Mount 'a{sv}' 3                                                                    \
-                  as-user s deck                                                                   \
+                  as-user s jarvis                                                                   \
                   auth.no_user_interaction b true                                                  \
                   options                  s "$OPTS") || ret=$?
 
@@ -136,7 +136,7 @@ do_mount()
     fi
 
     # Expected reply is of the format
-    #  {"type":"s","data":["/run/media/deck/home"]}
+    #  {"type":"s","data":["/run/media/jarvis/home"]}
     mount_point=$(jq -r '.data[0] | select(type == "string")' <<< "$reply" || true)
     if [[ -z $mount_point ]]; then
         echo "Error when mounting ${DEVICE}: udisks returned success but could not parse reply:"
@@ -172,7 +172,7 @@ do_mount()
     else
         #TODO check permissions are 1000  when creating new SteamLibrary
         mkdir -p "${mount_point}/SteamLibrary"
-        chown deck:deck "${mount_point}/SteamLibrary"
+        chown jarvis:jarvis "${mount_point}/SteamLibrary"
         send_steam_url "addlibraryfolder" "${mount_point}/SteamLibrary"
     fi
 }
